@@ -1,5 +1,6 @@
 
 .idea/
+.scannerwork/
 
 # Smarty
 lexer/*.php
