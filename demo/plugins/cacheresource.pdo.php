@@ -254,7 +254,7 @@ class Smarty_CacheResource_Pdo extends Smarty_CacheResource_Custom
         $stmt->bindValue('expire', (int)$exp_time, PDO::PARAM_INT);
         $stmt->bindValue('content', $this->inputContent($content));
         $stmt->execute();
-        return !!$stmt->rowCount();
+        return (bool)$stmt->rowCount();
     }
 
     /**

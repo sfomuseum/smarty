@@ -132,7 +132,7 @@ class Smarty_CacheResource_Mysql extends Smarty_CacheResource_Custom
                   'compile_id' => $compile_id,
                   'content' => $content,)
         );
-        return !!$this->save->rowCount();
+        return (bool)$this->save->rowCount();
     }
 
     /**

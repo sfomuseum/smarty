@@ -82,7 +82,7 @@ abstract class Smarty_CacheResource_KeyValueStore extends Smarty_CacheResource
         }
         $cached->content = $content;
         $cached->timestamp = (int)$timestamp;
-        $cached->exists = !!$cached->timestamp;
+        $cached->exists = (bool)$cached->timestamp;
     }
 
     /**
@@ -284,7 +284,7 @@ abstract class Smarty_CacheResource_KeyValueStore extends Smarty_CacheResource
                 $content = null;
             }
         }
-        return !!$content;
+        return (bool)$content;
     }
 
     /**

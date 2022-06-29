@@ -52,7 +52,7 @@ class Smarty_Resource_Ambiguous extends Smarty_Internal_Resource_File
         $source->uid = sha1($source->filepath);
         if ($_template->smarty->getCompileCheck() && !isset($source->timestamp)) {
             $source->timestamp = @filemtime($source->filepath);
-            $source->exists = !!$source->timestamp;
+            $source->exists = (bool)$source->timestamp;
         }
     }
 }

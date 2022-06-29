@@ -43,7 +43,7 @@ function smarty_modifier_mb_wordwrap($str, $width = 75, $break = "\n", $cut = fa
             }
         }
         foreach ($_tokens as $token) {
-            $_space = !!preg_match('!^\s$!S' . Smarty::$_UTF8_MODIFIER, $token);
+            $_space = (bool)preg_match('!^\s$!S' . Smarty::$_UTF8_MODIFIER, $token);
             $token_length = mb_strlen($token, Smarty::$_CHARSET);
             $length += $token_length;
             if ($length > $width) {

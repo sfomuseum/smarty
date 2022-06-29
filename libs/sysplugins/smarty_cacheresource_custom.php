@@ -105,7 +105,7 @@ abstract class Smarty_CacheResource_Custom extends Smarty_CacheResource
             $this->fetchTimestamp($cached->filepath, $cached->source->name, $cached->cache_id, $cached->compile_id);
         if ($mtime !== null) {
             $cached->timestamp = $mtime;
-            $cached->exists = !!$cached->timestamp;
+            $cached->exists = (bool)$cached->timestamp;
             return;
         }
         $timestamp = null;
@@ -118,7 +118,7 @@ abstract class Smarty_CacheResource_Custom extends Smarty_CacheResource
             $timestamp
         );
         $cached->timestamp = isset($timestamp) ? $timestamp : false;
-        $cached->exists = !!$cached->timestamp;
+        $cached->exists = (bool)$cached->timestamp;
     }
 
     /**
